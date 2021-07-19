@@ -18,5 +18,7 @@ Supporting features:
 
 # Async cluster API
 > Async API shares the same interfaces except some minor changes.
+> 
+> If the master is down, the API will store the failed comamnd, and once that master is considered as timed out by the API, the API will try to update the local connection pool and retry all the failed commands to their correct masters again.
 # Todo List
 * sync and async cannot handle ASK/MOVED command.
